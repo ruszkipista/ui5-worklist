@@ -25,6 +25,11 @@
                     formatter: '.formatter.numberUnit'
                 }"
                 unit="{CurrencyCode}" />
+            <Text text="{SupplierName}"/>
+            <Link
+                text="{ToSupplier/WebAddress}"
+                href="{ToSupplier/WebAddress}"
+                target="_blank"/>
         </semantic:headerContent>
 
         <semantic:sendEmailAction>
