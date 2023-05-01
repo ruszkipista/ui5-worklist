@@ -6,27 +6,30 @@
 
 |               |   |
 | ------------- | - |
-|**Generation Date and Time**|Mon May 01 2023 14:09:08 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**|@sap/generator-fiori-elements|
+|**Generation Date and Time**|Mon May 01 2023 20:17:34 GMT+0000 (Coordinated Universal Time)|
+|**App Generator**|@sap/generator-fiori-freestyle|
 |**App Generator Version**|1.9.4|
 |**Generation Platform**|SAP Business Application Studio|
-|**Template Used**|Worklist Page V2|
+|**Template Used**|1worklist|
 |**Service Type**|SAP System (ABAP On Premise)|
 |**Service URL**|https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/
-|**Module Name**|manage|
-|**Application Title**|Worklist demo app|
-|**Namespace**|opensap.products|
+|**Module Name**|manageproduct|
+|**Application Title**|Manage Products|
+|**Namespace**|opensap|
 |**UI5 Theme**|sap_horizon|
 |**UI5 Version**|1.113.0|
 |**Enable Code Assist Libraries**|False|
 |**Enable TypeScript**|False|
 |**Add Eslint configuration**|False|
-|**Main Entity**|ProductSet|
-|**Navigation Entity**|None|
+|**Object collection**|ProductSet|
+|**Object collection key**|ProductID|
+|**Object ID**|ProductID|
+|**Object number**|Price|
+|**Object unit of measure**|CurrencyCode|
 
-## manage
+## manageproduct
 
-Manage Products
+Worklist - Manage Products
 
 ### Starting the generated app
 

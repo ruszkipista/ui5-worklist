@@ -43,10 +43,10 @@
                 }
             },
             applications: {
-                "opensapproductsmanage-tile": {
-                    title: "Worklist demo app",
-                    description: "Manage Products",
-                    additionalInformation: "SAPUI5.Component=opensap.products.manage",
+                "opensapmanageproduct-display": {
+                    title: "Manage Products",
+                    description: "Worklist - Manage Products",
+                    additionalInformation: "SAPUI5.Component=opensap.manageproduct",
                     applicationType: "URL",
                     url: "../"
                 }
@@ -58,15 +58,14 @@
     <!-- Bootstrap the UI5 core library. 'data-sap-ui-frameOptions="allow"'' is a NON-SECURE setting for test environments -->
     <script id="sap-ui-bootstrap"
         src="../resources/sap-ui-core.js"
-        data-sap-ui-libs="sap.m,sap.ui.core,sap.ushell,sap.f,sap.ui.comp,sap.ui.generic.app,sap.suite.ui.generic.template,sap.collaboration"
+        data-sap-ui-libs="sap.m,sap.ui.core,sap.f,sap.suite.ui.generic.template,sap.ui.comp,sap.ui.generic.app,sap.ui.table,sap.ushell"
         data-sap-ui-async="true"
         data-sap-ui-preload="async"
         data-sap-ui-theme="sap_horizon"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-language="en"
-        data-sap-ui-resourceroots='{"opensap.products.manage": "../"}'
-        data-sap-ui-frameOptions="allow"
-        data-sap-ui-flexibilityServices='[{"applyConnector":"opensap/products/manage/test/changes_loader", "custom":true}]'>
+        data-sap-ui-resourceroots='{"opensap.manageproduct": "../"}'
+        data-sap-ui-frameOptions="allow">
     </script>
     <script id="locate-reuse-libs" src="./locate-reuse-libs.js" data-sap-ui-manifest-uri="../manifest.json">
     </script>

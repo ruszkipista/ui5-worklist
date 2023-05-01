@@ -1,7 +1,7 @@
 {
   "_version": "1.49.0",
   "sap.app": {
-    "id": "opensap.products.manage",
+    "id": "opensap.manageproduct",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,25 +13,16 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:worklist",
       "version": "1.9.4",
-      "toolsId": "efcaf95d-a167-4f51-81d1-7029e4c54832"
+      "toolsId": "0c48a5f4-f87a-4782-9c4f-e6f38514dcdd"
     },
     "dataSources": {
       "mainService": {
         "uri": "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
         "type": "OData",
         "settings": {
-          "annotations": [
-            "annotation"
-          ],
+          "annotations": [],
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
-        }
-      },
-      "annotation": {
-        "type": "ODataAnnotation",
-        "uri": "annotations/annotation.xml",
-        "settings": {
-          "localUri": "annotations/annotation.xml"
         }
       }
     }
@@ -59,12 +50,12 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.ushell": {},
         "sap.f": {},
+        "sap.suite.ui.generic.template": {},
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
-        "sap.suite.ui.generic.template": {},
-        "sap.collaboration": {}
+        "sap.ui.table": {},
+        "sap.ushell": {}
       }
     },
     "contentDensities": {
@@ -75,68 +66,76 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "opensap.products.manage.i18n.i18n"
+          "bundleName": "opensap.manageproduct.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {
-          "defaultBindingMode": "TwoWay",
-          "defaultCountMode": "Inline",
-          "refreshAfterChange": false,
-          "metadataUrlParams": {
-            "sap-value-list": "none"
-          }
-        }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
+        "settings": {}
       }
     },
     "resources": {
       "css": []
     },
     "routing": {
-      "config": {},
-      "routes": [],
-      "targets": {}
-    }
-  },
-  "sap.ui.generic.app": {
-    "_version": "1.3.0",
-    "settings": {
-      "forceGlobalRefresh": false,
-      "objectPageHeaderType": "Dynamic",
-      "considerAnalyticalParameters": true,
-      "showDraftToggle": false
-    },
-    "pages": {
-      "ListReport|ProductSet": {
-        "entitySet": "ProductSet",
-        "component": {
-          "name": "sap.suite.ui.generic.template.ListReport",
-          "list": true,
-          "settings": {
-            "smartVariantManagement": true,
-            "isWorklist": true,
-            "filterSettings": {
-              "dateSettings": {
-                "useDateRange": true
-              }
-            },
-            "tableSettings": {
-              "multiSelect": true
-            }
-          }
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "opensap.manageproduct.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": [
+            "notFound"
+          ]
         },
-        "pages": {}
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "worklist",
+          "target": [
+            "worklist"
+          ]
+        },
+        {
+          "pattern": "ProductSet/{objectId}",
+          "name": "object",
+          "target": [
+            "object"
+          ]
+        }
+      ],
+      "targets": {
+        "worklist": {
+          "viewName": "Worklist",
+          "viewId": "worklist",
+          "viewLevel": 1,
+          "title": "{i18n>worklistViewTitle}"
+        },
+        "object": {
+          "viewName": "Object",
+          "viewId": "object",
+          "viewLevel": 2,
+          "title": "{i18n>objectViewTitle}"
+        },
+        "objectNotFound": {
+          "viewName": "ObjectNotFound",
+          "viewId": "objectNotFound"
+        },
+        "notFound": {
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        }
       }
+    },
+    "rootView": {
+      "viewName": "opensap.manageproduct.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
     }
-  },
-  "sap.fiori": {
-    "registrationIds": [],
-    "archeType": "transactional"
   }
 }
