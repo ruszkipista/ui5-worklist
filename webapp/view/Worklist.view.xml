@@ -67,7 +67,8 @@
                         press=".onPress">
                         <cells>
                             <ObjectIdentifier
-                                title="{ProductID}"/>
+                                title="{ProductID}"
+                                text="{Name}"/>
                             <ObjectNumber
                                 number="{
                                     path: 'Price',

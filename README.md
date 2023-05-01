@@ -6,7 +6,7 @@
 
 |               |   |
 | ------------- | - |
-|**Generation Date and Time**|Mon May 01 2023 20:17:34 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**|Mon May 01 2023 20:17:34|
 |**App Generator**|@sap/generator-fiori-freestyle|
 |**App Generator Version**|1.9.4|
 |**Generation Platform**|SAP Business Application Studio|

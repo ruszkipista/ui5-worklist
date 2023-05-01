@@ -18,6 +18,7 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
+            <ObjectAttribute text="{Name}"/>
             <ObjectNumber
                 number="{
                     path: 'Price',
